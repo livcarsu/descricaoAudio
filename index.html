@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acessibilidade - Inteligência Artificial</title>
+    <link rel="stylesheet" href="style.css">
+</head> 
+<body>
+<style>
+    body {
+    margin: 0; 
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+} 
+header {
+    background-color: #191970;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+footer {
+    background-color: #191970;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    margin-top: auto;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 20px;
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+    max-width: 300%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.card-content {
+    padding: 15px;
+}
+.card-content h2 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+}
+.card-content p {
+    margin: 0;
+    font-size: 1em;
+    color: #333;
+}
+</style>
+    <header>
+        <h1>Web Speech API - Receitas</h1>
+    </header>
+    <div class="container">
+        <div class="cards">
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQozkpgXDpW2SPRAPGhsNnw8XpolVk1wSSqh_bVcQbL5Tm1yrKc4E8cHoc&s=10" alt="Lanche Natural">
+                <div class="card-content">
+                    <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQozkpgXDpW2SPRAPGhsNnw8XpolVk1wSSqh_bVcQbL5Tm1yrKc4E8cHoc&s=10" aria-label="Link para a imagem do Lanche Natural">Ver maior</a> <br>
+                    <button onclick="lerDescricao(this)">Ouvir descrição</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxutlA_AiuETdOIOwQyGxldkZ6odcuUmujRp_v5jy0-kRVEfadV5kMjx4V&s=10" alt="Prato de Salada com Frango">
+                <div class="card-content">
+                    <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxutlA_AiuETdOIOwQyGxldkZ6odcuUmujRp_v5jy0-kRVEfadV5kMjx4V&s=10" aria-label="Link para a imagem da Salada com Frango">Ver maior</a> <br>
+                    <button onclick="lerDescricao(this)">Ouvir descrição</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZHMYAFEKnBuVPdtke5-VrsAhejLu3N95U2d5l16XutxdWUzxyn7kar5E&s=10" alt="Prato de Frutas Variadas">
+                <div class="card-content">
+                    <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZHMYAFEKnBuVPdtke5-VrsAhejLu3N95U2d5l16XutxdWUzxyn7kar5E&s=10" aria-label="Link para a imagem do Prato de Frutas">Ver maior</a> <br>
+                    <button onclick="lerDescricao(this)">Ouvir descrição</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCAoEfC1mFNN_wx1NQaN1smDh32MVHlSDZAA&usqp=CAU" alt="Prato Vegetariano>
+                <div class="card-content">
+                    <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCAoEfC1mFNN_wx1NQaN1smDh32MVHlSDZAA&usqp=CAU" aria-label="Link para a imagem do Prato Vegetariano">Ver maior</a> <br>
+                    <button onclick="lerDescricao(this)">Ouvir descrição</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0s86WLC5Hm8xLSg_YbGsmeWrTC97o_Jg94MI-5ZJmGZnMnc6njlveUixz&s=10" alt="Poke Japonês com Salmão">
+                <div class="card-content">
+                    <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0s86WLC5Hm8xLSg_YbGsmeWrTC97o_Jg94MI-5ZJmGZnMnc6njlveUixz&s=10" aria-label="Link para a imagem do Poke Japonês">Ver maior</a> <br>
+                    <button onclick="lerDescricao(this)">Ouvir descrição</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrLK--YIOMZ5-E0_ZMEzxD9DCipJBH7wwyjP41lnZUV6hDWWzQmcDSlF4&s=10" alt="Prato para Dieta de Proteína">
+                <div class="card-content">
+                    <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrLK--YIOMZ5-E0_ZMEzxD9DCipJBH7wwyjP41lnZUV6hDWWzQmcDSlF4&s=10" aria-label="Link para a imagem do Prato de Proteínas">Ver maior</a> <br>
+                    <button onclick="lerDescricao(this)">Ouvir descrição</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://lirp.cdn-website.com/33406c6e/dms3rep/multi/opt/Alimentos-ricos-em-fibras-8d19ae30-640w.jpg" alt="Prato para Dieta de Fibras">
+                <div class="card-content">
+                    <a href="https://lirp.cdn-website.com/33406c6e/dms3rep/multi/opt/Alimentos-ricos-em-fibras-8d19ae30-640w.jpg" aria-label="Link para a imagem do Prato de Fibras">Ver maior</a> <br>
+                    <button onclick="lerDescricao(this)">Ouvir descrição</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZB7aMdxaK4LLHAsZtnjCE2AwL4FrUeB7dw1lXgu9xtIbQr5tTkQx78ik&s=10" alt="Prato de Frutos do Mar">
+                <div class="card-content">
+                    <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZB7aMdxaK4LLHAsZtnjCE2AwL4FrUeB7dw1lXgu9xtIbQr5tTkQx78ik&s=10" aria-label="Link para a imagem do Prato de Frutos do Mar">Ver maior</a> <br>
+                    <button onclick="lerDescricao(this)">Ouvir descrição</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXeNdA267HUp_2ER4YL-kiZV4UelUCB3NuG3YuhectdmxogGEcSvJH91n8&s=10" alt=" Sopa de Legumes">
+                <div class="card-content">
+                    <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXeNdA267HUp_2ER4YL-kiZV4UelUCB3NuG3YuhectdmxogGEcSvJH91n8&s=10" aria-label="Link para a imagem da Sopa de Legumes">Ver maior</a> <br>
+                    <button onclick="lerDescricao(this)">Ouvir descrição</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 - Desenvolvido por Lívia Suana.</p>
+    </footer>
+    <script>
+        function lerDescricao(botao) {
+    window.speechSynthesis.cancel();
+    const descricaoImagem = botao.closest('.card').querySelector('img').alt;
+    lerTexto(descricaoImagem);
+}
+
+function lerTexto(texto) {
+    const mensagem = new SpeechSynthesisUtterance(texto);
+    window.speechSynthesis.speak(mensagem);
+}
+    </script>
+</body>
+</html>
